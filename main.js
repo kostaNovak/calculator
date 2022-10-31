@@ -56,6 +56,7 @@ document.addEventListener('click', function(e){
       result = operate(operator,+firstNumber,+expression)
       // showUpper.innerText = result
       showVal.innerText = result
+      showUpper.innerText = `${firstNumber} ${operator} ${expression} =`
       firstNumber = result
       expression = ''
       equalPressed = true}
