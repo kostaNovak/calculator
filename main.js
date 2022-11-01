@@ -31,7 +31,6 @@ function operate (oper,num1,num2){
     return divide(num1,num2)
   }
 }
-let equalPressed = false
 let showUpper = document.getElementById('upper')
 let showVal = document.getElementById('screen')
 let expression = ''
@@ -39,17 +38,19 @@ let operator
 let firstNumber
 let result
 
-document.addEventListener('click', function(e){
-
-  if (e.target.matches('.btnclr')){
-
+function resetAll(){
   showUpper.innerText = ''
   showVal.innerText = ''
   expression = ''
   operator = undefined
   firstNumber = undefined
   result = undefined
+}
 
+document.addEventListener('click', function(e){
+
+  if (e.target.matches('.btnclr')){
+    resetAll()
   }
   if (e.target.matches('.equal')){
     if(operator != undefined && firstNumber != undefined && expression != '' ){
@@ -59,7 +60,7 @@ document.addEventListener('click', function(e){
       showUpper.innerText = `${firstNumber} ${operator} ${expression} =`
       firstNumber = result
       expression = ''
-      equalPressed = true}
+      }
 
   }
   else if(e.target.matches('.btn')){
@@ -96,10 +97,18 @@ document.addEventListener('click', function(e){
   else if (e.target.matches('.numBtn')){
     if (showVal.innerText == result){
       showVal.innerText = ''
+      showUpper.innerText =''
       operator = undefined
       firstNumber = undefined
       result = undefined
     }
+    if (showVal.innerText ==='0' || showVal.innerText ==='.'){
+      resetAll()
+    }
+    if (showVal.innerText ==='/' && firstNumber == undefined){
+      resetAll()
+    }
+    
     expression += e.target.value
     showVal.innerText += e.target.value
 }

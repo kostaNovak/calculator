@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+
+
 * {
   box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
+
 }
 body {
   justify-content: center;
@@ -22,20 +27,30 @@ body {
 
 .display {
   height: 150px;
-  border: 1px solid red;
-  background-color: #FAFAFA;
+  border: 2px solid #499273;
+  border-radius: 5px;
+  background-color: #C1E995;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+}
+.display-upper{
+  margin-bottom:100px;
+  font-size: 20px;
+  font-family: 'Nunito Sans', sans-serif;
+
 }
 .display-text{
  font-size: 50px;
  font-weight: bolder;
  padding: 10px;
+ flex-grow: 0;
+ font-family: 'Nunito Sans', sans-serif;
+
 }
 .delete-btns{
   height: 100px;
-  border: 1px solid yellow;
+  /* border: 5px solid black; */
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -43,13 +58,15 @@ body {
 }
 .buttons {
   display: flex;
-  border: 1px solid orange;
+  /* border: 1px solid orange; */
   height:300px;
   flex-wrap: wrap;
   gap:20px;
   justify-content: center;
   align-items: center;
   align-content: center;
+ 
+
 
 }
 .btn,
@@ -60,10 +77,15 @@ body {
   height: 40px;
   font-size: 20px;
   background-color: #C1E995;
+  border-radius: 10px;
 }
-.btnclr{
-  font-size: 15px;
-  width: 150px;
+.btn:hover,
+.numBtn:hover,
+.equal:hover,
+.btnclr:hover {
+      background-color:#e1dcdc;
+      transition: 0.9;
+
 }
 .btnclr{
   font-size: 15px;
